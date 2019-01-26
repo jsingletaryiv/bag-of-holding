@@ -1,0 +1,54 @@
+<!-- Page Header -->
+<!-- TODO:: Generate component for header feature -->
+<header class="app-header-config">
+  <div class="app-header-content">
+    <h1 class="mat-display-1">{{ pageTitle | uppercase }}</h1>
+    <mat-divider [inset]="true"></mat-divider>
+    <h2 class="mat-h2">{{ pageSubTitle | uppercase }}</h2>
+  </div>
+</header>
+
+<!-- Section 1 -->
+<section class="app-section-config page-section-container">
+  <article>
+    <div>
+      <h1 class="mat-headline">{{ section1Title | uppercase }}</h1>
+      <p>
+        My name is James and thank you for taking a few minutes to learn a little bit about myself, my current focus, skill-set, and
+        what it is that I'm truly passionate about.
+      </p>
+    </div>
+  
+  </article>
+
+  <mat-divider></mat-divider>
+  
+</section>
+
+
+<!-- Section 2 -->
+<section class="app-section-config page-section-container">
+  <article>
+    <mat-card class="page-content-card">
+      <mat-card-header>
+        <mat-card-title>
+          <h1 class="mat-title">{{ missionTitle | uppercase }}</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="mat-body-1">
+          To establish myself as a valuable asset by utilizing my ever-growing skill set, thus allowing continued growth personally and professionally.
+          Design / Develop clean &amp; creative concepts while continuing to learn new technologies and methodologies that will allow me to achieve even greater
+          goals. Absorbing up as much as I can and applying it in creating real world solutions.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </article>
+    
+  <!-- Ad-Hoc -->
+  <div class="page-content-spacer"></div>
+
+</section>
+
+<!-- Nest Footer Component -->
+<app-footer></app-footer>

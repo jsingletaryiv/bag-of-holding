@@ -1,0 +1,67 @@
+// Import flex-box prefixes
+// @import '../../shared/styles/flexbox-prefix';
+
+// Custom styles and/or AMC overrides
+.app-is-mobile .app-navbar {
+    // Create Sticky Navbar
+    // @include flexbox();
+    // @include flexflow(column nowrap);
+    width: 100%;
+}
+
+.app-navbar {
+    // color: #fff;
+    // background-color: transparent;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+
+nav .app-navbar h1  {
+    font-family: 'Unica One', normal;
+    // font-size: 5rem;
+    // color: #fff;
+    // text-shadow: 2px 2px 2px #333;
+
+    .app-title {
+        margin-left: 2vw;
+    }
+}
+
+.app-navbar-logo-padding {
+    box-sizing: border-box;
+    min-height: 1px;
+    padding: 0 2rem;
+}
+
+// ! NOTE - The following class is not being used.
+.app-navbar-spacer {
+    // This fills in the remaining space, by using flexbox. 
+    // Every toolbar row uses a flexbox row layout.
+    // flex: 1 1 100%;
+    width: 25%;
+}
+
+.app-navbar-transition {
+    transition: all .3s ease;
+} 
+
+// TODO - Look into previous tooltip issue
+.app-navbar-tooltip { 
+    min-width: 100px;
+}
+
+// AMC Classes
+.mat-button {
+    font-family: 'Unica One', normal;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.mat-toolbar-multiple-rows {
+    min-height: 50px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row { 
+    height: 50px;
+}
