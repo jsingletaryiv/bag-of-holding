@@ -6,51 +6,28 @@ body {
   padding: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  -webkit-perspective: 20rem;
-          perspective: 20rem;
+  -webkit-perspective: 10rem;
+          perspective: 10rem;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
 header {
-  height: 45vh;
-  width: 100vw;
-  position: relative;
-  -webkit-transform-style: inherit;
-          transform-style: inherit;
+  height: 100vh;
+  background-image: url("../../../../../assets/images/welcome-header.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 header .app-header-content {
   position: relative;
-  padding: 20vh 5vw 5vh 5vw;
-  z-index: -1;
+  padding: 34vh 5vw 0 5vw;
+  z-index: 1;
 }
 
 header .app-header-content h1, header .app-header-content h2, header .app-header-content h3, header .app-header-content h4 {
   font-family: 'Comfortaa', normal;
   text-shadow: 2px 2px 2px #333;
-}
-
-header::before {
-  height: 50vh;
-  position: absolute;
-  top: 20px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  content: "";
-  display: block;
-  background-color: #212121;
-  background-image: url("../../../../../assets/images/welcome-header.jpg");
-  background-position: top center;
-  background-size: auto 600px;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  -webkit-transform-origin: center center 0;
-          transform-origin: center center 0;
-  -webkit-transform: scale(2) translate(0px, -40px);
-  transform: scale(2) translate(0px, -40px);
-  z-index: -1;
 }
 
 header > * {

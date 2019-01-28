@@ -72,26 +72,20 @@
     <article class="app-article-item">
       <div class="app-div-item">
         <!-- Leveraging Ng-Material base / minimum styles -->
-        <mat-card class="app-card-content">
-          <mat-card-header>
-            <mat-card-title>
-              <h1 class="mat-title">{{ missionTitle | uppercase }}</h1>
-            </mat-card-title>
-            <mat-card-subtitle>
-              <mat-divider></mat-divider>
-            </mat-card-subtitle>
-          </mat-card-header>
-          
-          <mat-card-content>
+        <mz-card class="blue darken-2 white-text" [hoverable]="true">
+          <mz-card-title>
+            <h1 class="mat-title">{{ missionTitle | uppercase }}</h1>
+          </mz-card-title>
+          <mz-card-content>
             <p class="mat-body-1">
               To establish myself as a valuable asset by writing clean, efficient, yet reusable code to create applications that have a positive impact on its
               users while increasing / streamlining productivity within any given industry. Always holding myself and my skill set to a higher standard. Building
               out intuitive interfaces by means of the latest industry methods &amp; standards. Never being afraid to acknowledge and learn new up-and-coming
               technologies / methodologies that can be applied when creating innovative real world solutions.
             </p>
-          </mat-card-content>
-  
-        </mat-card>
+          </mz-card-content>
+
+        </mz-card>
   
       </div>
   

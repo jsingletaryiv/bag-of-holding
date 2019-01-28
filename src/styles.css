@@ -89,8 +89,8 @@ app-root > app-contact div > section.app-section-container,
 app-root > app-projects div > section.app-section-container,
 app-root > app-sandbox div > section.app-section-container,
 app-root > app-welcome div > section.app-section-container {
+  margin-top: 2vh;
   list-style: none;
-  background-color: #212121;
   width: 100%;
   z-index: 2;
 }
