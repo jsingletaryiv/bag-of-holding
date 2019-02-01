@@ -59,7 +59,6 @@ app-root > app-contact,
 app-root > app-projects,
 app-root > app-sandbox,
 app-root > app-welcome {
-  overflow-x: hidden;
   overflow-y: auto;
 }
 
