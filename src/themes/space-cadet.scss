@@ -1,30 +1,31 @@
-// Import Material Themes
-@import '../../node_modules/@angular/material/theming';
-// Include the common styles for Angular Material.
-@include mat-core();
+// // Import Material Themes
+// @import '../../node_modules/@angular/material/theming';
+// // Include the common styles for Angular Material.
+// @include mat-core();
 
-// Set primary, accent, and warn palettes.
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// For each palette, you can optionally specify a default, lighter, and darker hue.
-$app-theme-primary: mat-palette($mat-blue-grey);
-// $app-theme-accent:  mat-palette($mat-blue-grey, A400, A200, A700);
-$app-theme-accent:  mat-palette($mat-grey);
-$app-theme-warn:    mat-palette($mat-deep-orange);
-// Pass variables into mat-dark-theme function
-$app-theme:         mat-dark-theme($app-theme-primary, $app-theme-accent, $app-theme-warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component that you are using.
+// // Set primary, accent, and warn palettes.
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // For each palette, you can optionally specify a default, lighter, and darker hue.
+// $app-theme-primary: mat-palette($mat-blue-grey);
+// // $app-theme-accent:  mat-palette($mat-blue-grey, A400, A200, A700);
+// $app-theme-accent:  mat-palette($mat-grey);
+// $app-theme-warn:    mat-palette($mat-deep-orange);
+// // Pass variables into mat-dark-theme function
+// $app-theme:         mat-dark-theme($app-theme-primary, $app-theme-accent, $app-theme-warn);
 
-// TODO:: Move these material design palette overrides to a dedicated file.
-$primary-color-dark:   #E64A19;
-$primary-color:        #FF5722;
-$primary-color-light:  #FFCCBC;
-$primary-color-text:   #FFFFFF;
-$accent-color:         #607D8B;
-$primary-text-color:   #212121;
-$secondary-text-color: #757575;
-$divider-color:        #BDBDBD;
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component that you are using.
 
-// Pass the app-theme variable to the theme constructor.
-@include angular-material-theme($app-theme);
+// // TODO:: Move these material design palette overrides to a dedicated file.
+// $primary-color-dark:   #E64A19;
+// $primary-color:        #FF5722;
+// $primary-color-light:  #FFCCBC;
+// $primary-color-text:   #FFFFFF;
+// $accent-color:         #607D8B;
+// $primary-text-color:   #212121;
+// $secondary-text-color: #757575;
+// $divider-color:        #BDBDBD;
+
+// // Pass the app-theme variable to the theme constructor.
+// @include angular-material-theme($app-theme);
