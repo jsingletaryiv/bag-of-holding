@@ -1,7 +1,0 @@
-/* Custom styles and/or MDC overrides.*/
-.app-is-mobile {
-  /* Sticky Menu - Ensures the toolbar will stay on top of the content as it scrolls the y-axis. */
-  position: fixed;
-  z-index: 2;
-}
-/*# sourceMappingURL=app.component.css.map */
