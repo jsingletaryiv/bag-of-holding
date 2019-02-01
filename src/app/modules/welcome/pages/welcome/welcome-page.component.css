@@ -19,6 +19,53 @@ header {
   background-position: center;
 }
 
+#app-parallax-page {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#app-parallax-page .app-parallax-layer {
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+}
+
+#app-parallax-page .app-parallax-layer-1 {
+  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-1.png");
+}
+
+#app-parallax-page .app-parallax-layer-2 {
+  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-2.png");
+}
+
+#app-parallax-page .app-parallax-layer-3 {
+  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-3.png");
+}
+
+#app-parallax-page .app-parallax-layer-4 {
+  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-4.png");
+}
+
+#app-parallax-page .app-parallax-layer-5 {
+  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-5.png");
+}
+
+#app-parallax-page .app-parallax-layer-6 {
+  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-6.png");
+}
+
+#app-parallax-page .app-parallax-layer-7 {
+  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-7.png");
+}
+
+#app-parallax-page .app-parallax-layer-8 {
+  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-8.png");
+}
+
 header .app-header-content {
   position: relative;
   padding: 34vh 5vw 0 5vw;

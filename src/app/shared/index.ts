@@ -1,4 +1,4 @@
-export * from './shared.module';
-export * from './icons/icons.module';
-export * from './footer/footer.component';
-export * from './material/material.module';
+export * from '@app/shared/shared.module';
+export * from '@app/shared/icons/icons.module';
+export * from '@app/shared/footer/footer.component';
+// export * from '@app/shared/material/material.module';

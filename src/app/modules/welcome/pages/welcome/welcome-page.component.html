@@ -9,20 +9,32 @@
       {{ pageSubTitle | uppercase }}
     </h2>
 
-    <mat-divider></mat-divider>
+    <div class="divider"></div>
 
+  </div>
+
+  <div id="app-parallax-page">
+    <div class="app-parallax-layer-1" data-type="parallax"></div>
+    <div class="app-parallax-layer-2" data-type="parallax"></div>
+    <div class="app-parallax-layer-3" data-type="parallax"></div>
+    <div class="app-parallax-layer-4" data-type="parallax"></div>
+    <div class="app-parallax-layer-5" data-type="parallax"></div>
+    <div class="app-parallax-layer-6" data-type="parallax"></div>
+    <div class="app-parallax-layer-7" data-type="parallax"></div>
+    <div class="app-parallax-layer-8" data-type="parallax"></div>
   </div>
   
 </header>
 
 <div class="container">
+  
   <!-- Section One -->
   <section  class="app-section-config app-section-container app-section-one">
     <div class="row">
       <article class="app-article-item col s8">
         <!-- <h1 class="mat-headline">{{ section1Title | uppercase }}</h1> -->
-        <!-- <mat-divider></mat-divider> -->
-        <div class="app-div-item">
+        <!-- <div class="divider"></div> -->
+        <div class="app-div-item flow-text">
           <h1 class="mat-headline">
             My name is James, a <q>Full-Stack</q> Developer with a focus on Cloud-Based Software &amp; Web Applications - 
             capable of serving up Big Data in Real-Time via custom built APIs and Microservices. That being said, thank you
@@ -34,7 +46,7 @@
       </article> 
     
       <article class="app-article-item col s4">
-        <div class="app-div-item">
+        <div class="app-div-item flow-text">
           <p>
             I have always possesed a strong passion for creating innovative, yet intuitive real-world solutions that
             provide a positive impact to it's users &amp; visitors alike.
@@ -64,7 +76,7 @@
 </div>
 
 <!-- Leave divider outside of `div.container` scope  -->
-<mat-divider></mat-divider> 
+<div class="divider"></div> 
 
 <div class="container">
   <!-- Section Two -->
@@ -72,7 +84,7 @@
     <article class="app-article-item">
       <div class="app-div-item">
         <!-- Leveraging Ng-Material base / minimum styles -->
-        <mz-card class="blue darken-2 white-text" [hoverable]="true">
+        <mz-card [hoverable]="true">
           <mz-card-title>
             <h1 class="mat-title">{{ missionTitle | uppercase }}</h1>
           </mz-card-title>

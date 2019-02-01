@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SandboxComponent } from './sandbox-page.component';
+import { SandboxComponent } from '@app/modules/sandbox/pages/sandbox/sandbox-page.component';
 
 describe('SandboxComponent', () => {
   let component: SandboxComponent;

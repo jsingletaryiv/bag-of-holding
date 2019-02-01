@@ -21,7 +21,6 @@ export class WelcomePageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    // Init welcome page here...
-  }
+  ngOnInit() { }
+
 }

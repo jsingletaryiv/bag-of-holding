@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from '@app/shared';
-import { WelcomeRoutingModule } from './welcome-routing.module';
+import { SharedModule } from '@app/shared/shared.module';
+import { WelcomeRoutingModule } from '@app/modules/welcome/welcome-routing.module';
 
-import { WelcomePageComponent } from './pages/welcome/welcome-page.component';
+import { WelcomePageComponent } from '@app/modules/welcome/pages/welcome/welcome-page.component';
 
 @NgModule({
   imports: [

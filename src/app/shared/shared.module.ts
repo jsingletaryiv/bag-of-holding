@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { IconsModule } from './icons/icons.module';
-import { MaterialModule } from './material/material.module';
-import { MaterializeModule } from './materialize/materialize.module';
+import { IconsModule } from '@app/shared/icons/icons.module';
+import { MaterializeModule } from '@app/shared/materialize/materialize.module';
 
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from '@app/shared/footer/footer.component';
+import { HeaderComponent } from '@app/shared/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    // FlexLayoutModule,
     IconsModule,
-    MaterialModule,
     MaterializeModule
   ],
   declarations: [
@@ -23,9 +19,7 @@ import { HeaderComponent } from './header/header.component';
   ],
   exports: [
     CommonModule,
-    // FlexLayoutModule,
     IconsModule,
-    MaterialModule,
     MaterializeModule,
     FooterComponent,
     HeaderComponent
