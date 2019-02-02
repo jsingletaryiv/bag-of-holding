@@ -128,5 +128,8 @@
       }
     }
   },
+  "cli": {
+    "packageManager": "npm"
+  },
   "defaultProject": "bag-of-holding"
 }

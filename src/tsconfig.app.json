@@ -1,8 +1,27 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "../out-tsc/app",
-    "types": []
+    "module": "es2015",
+    "lib": [
+      "es2018"
+    ],
+    "types": [
+      "jasmine",
+      "jquery",
+      "materialize-css",
+      "node"
+    ],
+    "paths": {            
+      "@app/*":     ["app/*"],
+      "@assets/*":  ["assets/*"],
+      "@core/*":    ["app/core/*"],
+      "@env/*":     ["environments/*"],
+      "@helpers/*": ["app/helpers/*"],
+      "@routes/*":  ["app/modules/*"],
+      "@shared/*":  ["app/shared/*"]
+    },
   },
   "exclude": [
     "test.ts",
