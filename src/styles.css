@@ -1,2 +1,213 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 14px;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+html body {
+  font-family: "Montserrat", Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+html body q {
+  quotes: '"' '"' "'" "'";
+}
+
+html body q::before {
+  content: open-quote;
+}
+
+html body q::after {
+  content: close-quote;
+}
+
+app-root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: column nowrap;
+  -webkit-box-direction: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+app-root app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+app-root > app-about,
+app-root > app-contact,
+app-root > app-projects,
+app-root > app-sandbox,
+app-root > app-welcome {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+app-root > app-about h1, app-root > app-about h2, app-root > app-about h3, app-root > app-about h4,
+app-root > app-contact h1,
+app-root > app-contact h2,
+app-root > app-contact h3,
+app-root > app-contact h4,
+app-root > app-projects h1,
+app-root > app-projects h2,
+app-root > app-projects h3,
+app-root > app-projects h4,
+app-root > app-sandbox h1,
+app-root > app-sandbox h2,
+app-root > app-sandbox h3,
+app-root > app-sandbox h4,
+app-root > app-welcome h1,
+app-root > app-welcome h2,
+app-root > app-welcome h3,
+app-root > app-welcome h4 {
+  font-family: 'Comfortaa', Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+app-root > app-about div > section.app-section-container,
+app-root > app-contact div > section.app-section-container,
+app-root > app-projects div > section.app-section-container,
+app-root > app-sandbox div > section.app-section-container,
+app-root > app-welcome div > section.app-section-container {
+  margin-top: 2vh;
+  list-style: none;
+  width: 100%;
+  z-index: 2;
+}
+
+app-root > app-about div > section.app-section-container p,
+app-root > app-contact div > section.app-section-container p,
+app-root > app-projects div > section.app-section-container p,
+app-root > app-sandbox div > section.app-section-container p,
+app-root > app-welcome div > section.app-section-container p {
+  margin-bottom: 2em;
+}
+
+app-root > app-about div > section.app-section-container p:last-child,
+app-root > app-contact div > section.app-section-container p:last-child,
+app-root > app-projects div > section.app-section-container p:last-child,
+app-root > app-sandbox div > section.app-section-container p:last-child,
+app-root > app-welcome div > section.app-section-container p:last-child {
+  margin-bottom: 0;
+}
+
+app-root > app-about div > section.app-section-container small,
+app-root > app-contact div > section.app-section-container small,
+app-root > app-projects div > section.app-section-container small,
+app-root > app-sandbox div > section.app-section-container small,
+app-root > app-welcome div > section.app-section-container small {
+  font-size: .8rem;
+}
+
+app-root > app-about div > section.app-section-container.app-section-one article.app-article-item:nth-child(1),
+app-root > app-contact div > section.app-section-container.app-section-one article.app-article-item:nth-child(1),
+app-root > app-projects div > section.app-section-container.app-section-one article.app-article-item:nth-child(1),
+app-root > app-sandbox div > section.app-section-container.app-section-one article.app-article-item:nth-child(1),
+app-root > app-welcome div > section.app-section-container.app-section-one article.app-article-item:nth-child(1) {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1em 1.5em;
+}
+
+app-root > app-about div > section.app-section-container.app-section-one article.app-article-item:nth-child(1) div.app-div-item:nth-child(1),
+app-root > app-contact div > section.app-section-container.app-section-one article.app-article-item:nth-child(1) div.app-div-item:nth-child(1),
+app-root > app-projects div > section.app-section-container.app-section-one article.app-article-item:nth-child(1) div.app-div-item:nth-child(1),
+app-root > app-sandbox div > section.app-section-container.app-section-one article.app-article-item:nth-child(1) div.app-div-item:nth-child(1),
+app-root > app-welcome div > section.app-section-container.app-section-one article.app-article-item:nth-child(1) div.app-div-item:nth-child(1) {
+  text-align: end;
+}
+
+app-root > app-about div > section.app-section-container.app-section-one article.app-article-item:nth-child(2),
+app-root > app-contact div > section.app-section-container.app-section-one article.app-article-item:nth-child(2),
+app-root > app-projects div > section.app-section-container.app-section-one article.app-article-item:nth-child(2),
+app-root > app-sandbox div > section.app-section-container.app-section-one article.app-article-item:nth-child(2),
+app-root > app-welcome div > section.app-section-container.app-section-one article.app-article-item:nth-child(2) {
+  line-height: 1.7rem;
+  padding: 1em 1.5em;
+}
+
+app-root > app-about div > section.app-section-container.app-section-one article.app-article-item:nth-child(2) div.app-div-item,
+app-root > app-contact div > section.app-section-container.app-section-one article.app-article-item:nth-child(2) div.app-div-item,
+app-root > app-projects div > section.app-section-container.app-section-one article.app-article-item:nth-child(2) div.app-div-item,
+app-root > app-sandbox div > section.app-section-container.app-section-one article.app-article-item:nth-child(2) div.app-div-item,
+app-root > app-welcome div > section.app-section-container.app-section-one article.app-article-item:nth-child(2) div.app-div-item {
+  display: block;
+  width: 100%;
+}
+
+app-root > app-about div > section.app-section-container.app-section-two .app-card-content,
+app-root > app-contact div > section.app-section-container.app-section-two .app-card-content,
+app-root > app-projects div > section.app-section-container.app-section-two .app-card-content,
+app-root > app-sandbox div > section.app-section-container.app-section-two .app-card-content,
+app-root > app-welcome div > section.app-section-container.app-section-two .app-card-content {
+  min-height: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+
+app-root > app-about div > section.app-section-container.app-section-two .app-card-content .mat-card-header > .mat-card-header-text,
+app-root > app-contact div > section.app-section-container.app-section-two .app-card-content .mat-card-header > .mat-card-header-text,
+app-root > app-projects div > section.app-section-container.app-section-two .app-card-content .mat-card-header > .mat-card-header-text,
+app-root > app-sandbox div > section.app-section-container.app-section-two .app-card-content .mat-card-header > .mat-card-header-text,
+app-root > app-welcome div > section.app-section-container.app-section-two .app-card-content .mat-card-header > .mat-card-header-text {
+  margin: 0 0 15px 0;
+}
+
+app-root > app-about div > section.app-section-container .app-content-spacer,
+app-root > app-contact div > section.app-section-container .app-content-spacer,
+app-root > app-projects div > section.app-section-container .app-content-spacer,
+app-root > app-sandbox div > section.app-section-container .app-content-spacer,
+app-root > app-welcome div > section.app-section-container .app-content-spacer {
+  height: 500px;
+}
+
+.angular-logo {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==");
+}
+
+@media (max-width: 720px) {
+  app-root {
+    top: 90px;
+  }
+  app-root > app-about,
+  app-root > app-contact,
+  app-root > app-projects,
+  app-root > app-sandbox,
+  app-root > app-welcome {
+    padding: 10px 20px 0;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
 /*# sourceMappingURL=styles.css.map */

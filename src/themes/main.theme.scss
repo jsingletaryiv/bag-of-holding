@@ -1,0 +1,129 @@
+// Import Material Themes
+@import '../app/shared/materialize/scss/materialize';
+
+
+// Custom typography config to override the font-family as well
+// as the `display` and `headline` levels.
+$type-header-config: mat-typography-config(
+    $font-family:   'Comfortaa, normal',
+    $display-4:     mat-typography-level(112px, 112px, 300),
+    $display-3:     mat-typography-level(56px, 56px, 400),
+    $display-2:     mat-typography-level(45px, 48px, 400),
+    $display-1:     mat-typography-level(34px, 40px, 400),
+    $headline:      mat-typography-level(32px, 48px, 700),
+    $title:         mat-typography-level(24px, 32px, 400)
+);
+
+$type-section-config: mat-typography-config(
+    $font-family:   'Montserrat, normal',
+    $subheading-2:  mat-typography-level(16px, 28px, 600),
+    $subheading-1:  mat-typography-level(15px, 24px, 400),
+    $body-2:        mat-typography-level(1.25rem, 1.85rem, 400),
+    $body-1:        mat-typography-level(1rem, 1.7rem, 300),
+    $caption:       mat-typography-level(10px, 20px, 300),
+    $button:        mat-typography-level(1rem, 1.7rem, 400),
+    /* Line-height must be unit-less fraction of the font-size */
+    $input:         mat-typography-level(inherit, 1.125, 300)
+);
+
+.app-header-config h1,
+.app-header-config h2,
+.app-header-config h3,
+.app-header-config h4 {
+    font-family:    mat-font-family($type-header-config);
+}
+
+.app-section-config h1,
+.app-section-config h2,
+.app-section-config h3,
+.app-section-config h4 {
+    font-family:    mat-font-family($type-header-config);
+}
+
+.app-section-config p,
+.app-section-config span {
+    font-family:    mat-font-family($type-section-config);
+    font-size:      mat-font-size($type-section-config, body-1);
+    font-weight:    mat-font-weight($type-section-config, body-1);
+    line-height:    mat-line-height($type-section-config, body-1);
+}
+
+button.app-button-config span {
+    font-family:    mat-font-family($type-section-config);
+    font-size:      mat-font-size($type-section-config, button);
+    font-weight:    mat-font-weight($type-section-config, button);
+    line-height:    mat-line-height($type-section-config, button);
+}
+
+.app-footer-config {
+    font-family:    mat-font-family($type-section-config);
+    font-size:      mat-font-size($type-section-config, body-1);
+    font-weight:    mat-font-weight($type-section-config, body-1);
+    line-height:    mat-line-height($type-section-config, body-1);
+}
+
+// Include the common styles for Angular Material.
+@include mat-core();
+
+// Set primary, accent, and warn palettes.
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// For each palette, you can optionally specify a default, lighter, and darker hue.
+//// $app-theme-primary: mat-palette($mat-blue, 700, 400, 900);
+// $app-theme-accent:  mat-palette($mat-blue-grey, A400, A200, A700);
+//// $app-theme-accent:  mat-palette($mat-light-green);
+//// $app-theme-warn:    mat-palette($mat-deep-orange);
+// Pass variables into mat-dark-theme function
+//// $app-theme:         mat-dark-theme($app-theme-primary, $app-theme-accent, $app-theme-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component that you are using.
+// .set-bkgd-primary {
+//     background-color: mat-color($app-theme-primary);
+// }
+
+// .set-bkgd-accent {
+//     background-color: mat-color($app-theme-accent);
+// }
+
+// .set-bkgd-warn {
+//     background-color: mat-color($app-theme-warn);
+// }
+
+// .set-bkgd-color {
+//     // $props ($palette, $hue: default, $opacity: null)
+//     background-color: mat-color($app-theme-primary);
+// }
+
+// Footer Sections
+// .section-one {
+//     // $props ($palette, $hue: default, $opacity: null)
+//     background-color: mat-color($mat-blue, 700, 1);
+// }
+
+// .section-two {
+//     // $props ($palette, $hue: default, $opacity: null)
+//     background-color: mat-color($mat-blue, 700, .8);
+// }
+
+// .section-three {
+//     // $props ($palette, $hue: default, $opacity: null)
+//     background-color: mat-color($mat-blue, 700, .6);
+// }
+
+// .section-four {
+//     // $props ($palette, $hue: default, $opacity: null)
+//     background-color: mat-color($mat-blue, 700, .4);
+// }
+
+// TODO:: Move these material design palette overrides to a dedicated file.
+// $primary-color-dark:   #1565c0;
+// $primary-color:        #2196f3;
+// $primary-color-light:  #64b5f6;
+// $primary-color-text:   #FFFFFF;
+// $accent-color:         #8BC34A;
+// $primary-text-color:   #212121;
+// $secondary-text-color: #212121;
+// $divider-color:        #BDBDBD;
+
+// Pass the app-theme variable to the theme constructor.
+// @include angular-material-theme($app-theme);

@@ -1,0 +1,105 @@
+.app-header-config h1,
+.app-header-config h2,
+.app-header-config h3,
+.app-header-config h4 {
+  font-family: Comfortaa, normal;
+}
+
+.app-section-config h1,
+.app-section-config h2,
+.app-section-config h3,
+.app-section-config h4 {
+  font-family: Comfortaa, normal;
+}
+
+.app-section-config p,
+.app-section-config span {
+  font-family: Montserrat, normal;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7rem;
+}
+
+button.app-button-config span {
+  font-family: Montserrat, normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+}
+
+.app-footer-config {
+  font-family: Montserrat, normal;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7rem;
+}
+
+.mat-h1, .mat-headline, .mat-typography h1 {
+  font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 16px;
+}
+
+.mat-h2, .mat-title, .mat-typography h2 {
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 16px;
+}
+
+.mat-h3, .mat-subheading-2, .mat-typography h3 {
+  font: 400 16px/28px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 16px;
+}
+
+.mat-h4, .mat-subheading-1, .mat-typography h4 {
+  font: 400 15px/24px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 16px;
+}
+
+.mat-h5, .mat-typography h5 {
+  font: 400 11.62px/20px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 12px;
+}
+
+.mat-h6, .mat-typography h6 {
+  font: 400 9.38px/20px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 12px;
+}
+
+.mat-body-strong, .mat-body-2 {
+  font: 500 14px/24px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-body, .mat-body-1, .mat-typography {
+  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-body p, .mat-body-1 p, .mat-typography p {
+  margin: 0 0 12px;
+}
+
+.mat-small, .mat-caption {
+  font: 400 12px/20px Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-display-4, .mat-typography .mat-display-4 {
+  font: 300 112px/112px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 56px;
+  letter-spacing: -0.05em;
+}
+
+.mat-display-3, .mat-typography .mat-display-3 {
+  font: 400 56px/56px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 64px;
+  letter-spacing: -0.02em;
+}
+
+.mat-display-2, .mat-typography .mat-display-2 {
+  font: 400 45px/48px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 64px;
+  letter-spacing: -0.005em;
+}
+
+.mat-display-1, .mat-typography .mat-display-1 {
+  font: 400 34px/40px Roboto, "Helvetica Neue", sans-serif;
+  margin: 0 0 64px;
+}
+/*# sourceMappingURL=main.theme.css.map */
