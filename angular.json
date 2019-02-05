@@ -5,12 +5,12 @@
   "projects": {
     "bag-of-holding": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "src/",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineStyle": true,
+          "inlineStyle": false,
           "styleext": "scss"
         }
       },
@@ -28,9 +28,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/themes/main.theme.scss",
+              "node_modules/materialize-css/sass/materialize.scss",
+              "node_modules/@mdi/font/scss/materialdesignicons.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/materialize-css/dist/js/materialize.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -120,6 +126,129 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "landing-page-app": {
+      "root": "projects/landing-page-app/",
+      "sourceRoot": "projects/landing-page-app/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/landing-page-app",
+            "index": "projects/landing-page-app/src/index.html",
+            "main": "projects/landing-page-app/src/main.ts",
+            "polyfills": "projects/landing-page-app/src/polyfills.ts",
+            "tsConfig": "projects/landing-page-app/tsconfig.app.json",
+            "assets": [
+              "projects/landing-page-app/src/favicon.ico",
+              "projects/landing-page-app/src/assets"
+            ],
+            "styles": [
+              "projects/landing-page-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/landing-page-app/src/environments/environment.ts",
+                  "with": "projects/landing-page-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "landing-page-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "landing-page-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "landing-page-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/landing-page-app/src/test.ts",
+            "polyfills": "projects/landing-page-app/src/polyfills.ts",
+            "tsConfig": "projects/landing-page-app/tsconfig.spec.json",
+            "karmaConfig": "projects/landing-page-app/karma.conf.js",
+            "styles": [
+              "projects/landing-page-app/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/landing-page-app/src/favicon.ico",
+              "projects/landing-page-app/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/landing-page-app/tsconfig.app.json",
+              "projects/landing-page-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "landing-page-app-e2e": {
+      "root": "projects/landing-page-app-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/landing-page-app-e2e/protractor.conf.js",
+            "devServerTarget": "landing-page-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "landing-page-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/landing-page-app-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
