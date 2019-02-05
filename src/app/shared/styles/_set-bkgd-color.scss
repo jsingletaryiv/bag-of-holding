@@ -1,0 +1,17 @@
+// Partial for setting default or custom bkgd color
+@mixin set-bkgd-primary($palette) {
+    background-color: mat-color($palette);
+}
+
+@mixin set-bkgd-accent($palette) {
+    background-color: mat-color($palette);
+}
+
+@mixin set-bkgd-warn($palette) {
+    background-color: mat-color($palette);
+}
+
+@mixin set-bkgd-color($palette) {
+    // $props ($palette, $hue: default, $opacity: null)
+    background-color: mat-color($palette);
+}

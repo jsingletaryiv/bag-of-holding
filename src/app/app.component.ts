@@ -1,10 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: []
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'bag-of-holding';
+
+export class AppComponent implements OnDestroy {
+  myName = 'James Singletary IV';
+  myLocation = 'Tampa, Florida';
+
+  constructor() { }
+
+  ngOnDestroy(): void {
+
+  }
+
 }

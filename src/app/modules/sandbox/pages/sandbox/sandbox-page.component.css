@@ -1,0 +1,73 @@
+/* TODO:: Generate dedicated component for header feature...
+Move all markup and styles needed for Parallax */
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-perspective: 20rem;
+          perspective: 20rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+header {
+  height: 40vh;
+  width: 100vw;
+  position: relative;
+  -webkit-transform-style: inherit;
+          transform-style: inherit;
+}
+
+header .app-header-content {
+  position: relative;
+  padding: 20vh 5vw 5vh 5vw;
+  z-index: -1;
+}
+
+header .app-header-content h1, header .app-header-content h2, header .app-header-content h3, header .app-header-content h4 {
+  font-family: 'Comfortaa', normal;
+  text-shadow: 2px 2px 2px #333;
+}
+
+header::before {
+  height: 500px;
+  position: absolute;
+  top: 200px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  display: block;
+  background-color: #212121;
+  background-image: url("../../../../../assets/images/sandbox-header.jpg");
+  background-position: top center;
+  background-size: auto 650px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-transform-origin: center center 0;
+          transform-origin: center center 0;
+  -webkit-transform: scale(2) translate(0, -80px);
+  transform: scale(2) translate(0, -80px);
+  z-index: -1;
+}
+
+header * {
+  letter-spacing: .3rem;
+  text-align: left;
+  margin: 0;
+}
+
+header * h1, header * h2, header * h3, header * h4 {
+  margin: 1rem;
+}
+
+small {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+/*# sourceMappingURL=sandbox-page.component.css.map */

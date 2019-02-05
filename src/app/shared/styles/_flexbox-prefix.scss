@@ -1,0 +1,35 @@
+// Partial for setting cross-browser flexbox properties
+// Flexbox Container
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// Flexbox Item
+@mixin flexflow($props) {
+    -webkit-box-orient: $props;
+    -webkit-box-direction: $props;
+    -ms-flex-flow: $props;
+    flex-flow: $props;
+}
+
+@mixin flex($props) {
+    -webkit-box-flex: $props;
+    -moz-box-flex: $props;
+    -webkit-flex: $props;
+    -ms-flex: $props;
+    flex: $props;
+}
+
+@mixin order($int) {
+    -webkit-box-ordinal-group: $int;  
+    -moz-box-ordinal-group: $int;     
+    -ms-flex-order: $int;     
+    -webkit-order: $int;  
+    order: $int;
+}
+
+// Continue to create @functions, @mixins, and @return vals as needed

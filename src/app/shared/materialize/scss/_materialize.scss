@@ -1,0 +1,291 @@
+// Import all theming functionality from `components` directory
+// Leveraging `@angular/material` for base typography configs 
+// IDEA:: Consider breaking up styles and import as _partials 
+
+
+// Utility for fetching a nested value from a typography config.
+@function _mat-get-type-value($config, $level, $name) {
+  @return map-get(map-get($config, $level), $name);
+}
+
+// Gets the font size for a level inside a typography config.
+@function mat-font-size($config, $level) {
+  @return _mat-get-type-value($config, $level, font-size);
+}
+
+// Gets the line height for a level inside a typography config.
+@function mat-line-height($config, $level) {
+  @return _mat-get-type-value($config, $level, line-height);
+}
+
+// Gets the font weight for a level inside a typography config.
+@function mat-font-weight($config, $level) {
+  @return _mat-get-type-value($config, $level, font-weight);
+}
+
+// Gets the font-family from a typography config and removes the quotes around it.
+@function mat-font-family($config, $level: null) {
+  $font-family: map-get($config, font-family);
+
+  @if $level != null {
+    $font-family: _mat-get-type-value($config, $level, font-family);
+  }
+
+  @return if($font-family == null, $font-family, unquote($font-family));
+}
+
+
+// Outputs the shorthand `font` CSS property, based on a set of typography values. Falls back to
+// the individual properties if a value that isn't allowed in the shorthand is passed in.
+@mixin mat-typography-font-shorthand($font-size, $font-weight, $line-height, $font-family) {
+  // If any of the values are set to `inherit`, we can't use the shorthand
+  // so we fall back to passing in the individual properties.
+  @if ($font-size == inherit or
+        $font-weight == inherit or
+        $line-height == inherit or
+        $font-family == inherit or
+        $font-size == null or
+        $font-weight == null or
+        $line-height == null or
+        $font-family == null) {
+
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    font-family: $font-family;
+  }
+  @else {
+    // Otherwise use the shorthand `font`, because it's the least amount of bytes. Note
+    // that we need to use interpolation for `font-size/line-height` in order to prevent
+    // Sass from dividing the two values.
+    font: $font-weight #{$font-size}/#{$line-height} $font-family;
+  }
+}
+
+
+// Converts a typography level into CSS styles.
+@mixin mat-typography-level-to-styles($config, $level) {
+  $font-size: mat-font-size($config, $level);
+  $font-weight: mat-font-weight($config, $level);
+  $line-height: mat-line-height($config, $level);
+  $font-family: mat-font-family($config, $level);
+
+  @include mat-typography-font-shorthand($font-size, $font-weight, $line-height, $font-family);
+}
+
+@mixin mat-option-typography($config) {
+  .mat-option {
+    font: {
+      family: mat-font-family($config, subheading-2);
+      size: mat-font-size($config, subheading-2);
+    }
+  }
+}
+
+@mixin mat-optgroup-typography($config) {
+  .mat-optgroup-label {
+    @include mat-typography-level-to-styles($config, body-2);
+  }
+}
+
+
+// Represents a typography level from the Material design spec.
+@function mat-typography-level(
+  $font-size,
+  $line-height: $font-size,
+  $font-weight: 400,
+  $font-family: null) {
+
+  @return (
+    font-size: $font-size,
+    line-height: $line-height,
+    font-weight: $font-weight,
+    font-family: $font-family
+  );
+}
+
+
+// Represents a collection of typography levels.
+// Defaults come from https://material.io/guidelines/style/typography.html
+@function mat-typography-config(
+  $font-family:   'Roboto, "Helvetica Neue", sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(56px, 56px, 400),
+  $display-2:     mat-typography-level(45px, 48px, 400),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(24px, 32px, 400),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(14px, 14px, 500),
+  // Line-height must be unit-less fraction of the font-size.
+  $input:         mat-typography-level(inherit, 1.125, 400)) 
+  {
+      // Declare an initial map with all of the levels.
+      $config: (
+      display-4:      $display-4,
+      display-3:      $display-3,
+      display-2:      $display-2,
+      display-1:      $display-1,
+      headline:       $headline,
+      title:          $title,
+      subheading-2:   $subheading-2,
+      subheading-1:   $subheading-1,
+      body-2:         $body-2,
+      body-1:         $body-1,
+      caption:        $caption,
+      button:         $button,
+      input:          $input,
+      );
+
+      // Loop through the levels and set the `font-family` of the ones that don't have one to the base.
+      // Note that Sass can't modify maps in place, which means that we need to merge and re-assign.
+      @each $key, $level in $config {
+          @if map-get($level, font-family) == null {
+              $new-level: map-merge($level, (font-family: $font-family));
+              $config: map-merge($config, ($key: $new-level));
+          }
+      }
+  
+      // Add the base font family to the config.
+      @return map-merge($config, (font-family: $font-family));
+  }
+
+
+// Adds the base typography styles, based on passed in `$config` param.
+@mixin mat-base-typography($config, $selector: '.mat-typography') {
+  .mat-h1, .mat-headline, #{$selector} h1 {
+    @include mat-typography-level-to-styles($config, headline);
+    margin: 0 0 16px;
+  }
+
+  .mat-h2, .mat-title, #{$selector} h2 {
+    @include mat-typography-level-to-styles($config, title);
+    margin: 0 0 16px;
+  }
+
+  .mat-h3, .mat-subheading-2, #{$selector} h3 {
+    @include mat-typography-level-to-styles($config, subheading-2);
+    margin: 0 0 16px;
+  }
+
+  .mat-h4, .mat-subheading-1, #{$selector} h4 {
+    @include mat-typography-level-to-styles($config, subheading-1);
+    margin: 0 0 16px;
+  }
+
+  // Note: the spec doesn't have anything that would correspond to h5 and h6, but we add these for
+  // consistency. The font sizes come from the Chrome user agent styles which have h5 at 0.83em
+  // and h6 at 0.67em.
+  .mat-h5, #{$selector} h5 {
+    @include mat-typography-font-shorthand(
+      mat-font-size($config, body-1) * 0.83,
+      mat-font-weight($config, body-1),
+      mat-line-height($config, body-1),
+      mat-font-family($config, body-1)
+    );
+
+    margin: 0 0 12px;
+  }
+
+  .mat-h6, #{$selector} h6 {
+    @include mat-typography-font-shorthand(
+      mat-font-size($config, body-1) * 0.67,
+      mat-font-weight($config, body-1),
+      mat-line-height($config, body-1),
+      mat-font-family($config, body-1)
+    );
+
+    margin: 0 0 12px;
+  }
+
+  .mat-body-strong, .mat-body-2 {
+    @include mat-typography-level-to-styles($config, body-2);
+  }
+
+  .mat-body, .mat-body-1, #{$selector} {
+    @include mat-typography-level-to-styles($config, body-1);
+
+    p {
+      margin: 0 0 12px;
+    }
+  }
+
+  .mat-small, .mat-caption {
+    @include mat-typography-level-to-styles($config, caption);
+  }
+
+  // Note: The spec doesn't mention letter spacing. The value comes from
+  // eyeballing it until it looked exactly like the spec examples.
+  .mat-display-4, #{$selector} .mat-display-4 {
+    @include mat-typography-level-to-styles($config, display-4);
+    margin: 0 0 56px;
+    letter-spacing: -0.05em;
+  }
+
+  .mat-display-3, #{$selector} .mat-display-3 {
+    @include mat-typography-level-to-styles($config, display-3);
+    margin: 0 0 64px;
+    letter-spacing: -0.02em;
+  }
+
+  .mat-display-2, #{$selector} .mat-display-2 {
+    @include mat-typography-level-to-styles($config, display-2);
+    margin: 0 0 64px;
+    letter-spacing: -0.005em;
+  }
+
+  .mat-display-1, #{$selector} .mat-display-1 {
+    @include mat-typography-level-to-styles($config, display-1);
+    margin: 0 0 64px;
+  }
+}
+
+// Includes all of the typographic styles.
+@mixin angular-material-typography($config: null) {
+  @if $config == null {
+    $config: mat-typography-config();
+  }
+
+  @include mat-base-typography($config);
+  // @include mat-autocomplete-typography($config);
+  // @include mat-button-typography($config);
+  // @include mat-button-toggle-typography($config);
+  // @include mat-card-typography($config);
+  // @include mat-checkbox-typography($config);
+  // @include mat-chips-typography($config);
+  // @include mat-table-typography($config);
+  // @include mat-datepicker-typography($config);
+  // @include mat-dialog-typography($config);
+  // @include mat-expansion-panel-typography($config);
+  // @include mat-form-field-typography($config);
+  // @include mat-grid-list-typography($config);
+  // @include mat-icon-typography($config);
+  // @include mat-input-typography($config);
+  // @include mat-menu-typography($config);
+  // @include mat-paginator-typography($config);
+  // @include mat-progress-bar-typography($config);
+  // @include mat-progress-spinner-typography($config);
+  // @include mat-radio-typography($config);
+  // @include mat-select-typography($config);
+  // @include mat-sidenav-typography($config);
+  // @include mat-slide-toggle-typography($config);
+  // @include mat-slider-typography($config);
+  // @include mat-stepper-typography($config);
+  // @include mat-tabs-typography($config);
+  // @include mat-toolbar-typography($config);
+  // @include mat-tooltip-typography($config);
+  // @include mat-list-typography($config);
+  // @include mat-option-typography($config);
+  // @include mat-optgroup-typography($config);
+  // @include mat-snack-bar-typography($config);
+}
+
+// Mixin that renders all of the core styles that are not theme-dependent.
+@mixin mat-core($typography-config: null) {
+  // Typography
+  @include angular-material-typography($typography-config);
+}
