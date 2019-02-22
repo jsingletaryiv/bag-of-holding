@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IconsModule } from '@app/shared/icons/icons.module';
-import { MaterializeModule } from '@app/shared/materialize/materialize.module';
+import { IconsModule } from '@shared/icons/icons.module';
+import { MaterializeModule } from '@shared/materialize/materialize.module';
 
-import { HeaderComponent } from '@app/shared/header/header.component';
-import { FooterComponent } from '@app/shared/footer/footer.component';
+import { HeaderComponent } from '@shared/header/header.component';
+import { FooterComponent } from '@shared/footer/footer.component';
+
+// import { TrackScrollDirective } from '@shared/directives/track-scroll.directive';
 
 @NgModule({
   imports: [
@@ -15,13 +17,15 @@ import { FooterComponent } from '@app/shared/footer/footer.component';
   ],
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    // TrackScrollDirective
   ],
   exports: [
     IconsModule,
     MaterializeModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    // TrackScrollDirective
   ]
 })
 export class SharedModule { }

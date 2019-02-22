@@ -2,12 +2,16 @@ import { NgModule, Optional, SkipSelf, VERSION, OnInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
-// import { MaterializeModule } from '@app/shared/materialize/materialize.module';
-import { CoreRoutingModule } from '@app/core/core-routing.module';
-import { SharedModule } from '@app/shared/shared.module';
+import { CoreRoutingModule } from '@core/core-routing.module';
+import { SharedModule } from '@shared/shared.module';
+
+import { NavbarComponent } from '@core/navbar/navbar.component';
+
+// import { Scroll } from 'scroll-utility';
+
+// import { TrackScrollDirective } from '@shared/directives/track-scroll.directive';
 // import { WINDOW_PROVIDERS } from '@app/shared/services/window-host.service';
 
-import { NavbarComponent } from '@app/core/navbar/navbar.component';
 
 // TODO:: Generate a utils.module that will contain various
 // directives to help facilitate System / Admin requests
@@ -17,9 +21,9 @@ import { NavbarComponent } from '@app/core/navbar/navbar.component';
   imports: [
     BrowserAnimationsModule,
     CommonModule,
-    // MaterializeModule,
     CoreRoutingModule,
-    SharedModule
+    SharedModule,
+    // Scroll
   ],
   declarations: [
     NavbarComponent
@@ -29,10 +33,11 @@ import { NavbarComponent } from '@app/core/navbar/navbar.component';
   ],
   exports: [
     BrowserAnimationsModule,
-    // MaterializeModule​​,
     CoreRoutingModule,
     SharedModule,
-    NavbarComponent
+    NavbarComponent,
+    // Scroll
+    // TrackScrollDirective
   ]
 })
 

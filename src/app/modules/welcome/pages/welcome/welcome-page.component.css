@@ -6,64 +6,30 @@ body {
   padding: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  -webkit-perspective: 10rem;
-          perspective: 10rem;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
 }
 
 header {
   height: 100vh;
-  background-image: url("../../../../../assets/images/welcome-header.jpg");
-  background-size: cover;
-  background-position: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-#app-parallax-page {
+header div#app-parallax-page {
   height: 100vh;
   overflow: hidden;
   position: relative;
 }
 
-#app-parallax-page .app-parallax-layer {
-  background-position: bottom center;
+header div#app-parallax-page .layer {
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  width: auto;
   position: fixed;
+  content: "";
+  display: block;
   z-index: -1;
-}
-
-#app-parallax-page .app-parallax-layer-1 {
-  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-1.png");
-}
-
-#app-parallax-page .app-parallax-layer-2 {
-  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-2.png");
-}
-
-#app-parallax-page .app-parallax-layer-3 {
-  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-3.png");
-}
-
-#app-parallax-page .app-parallax-layer-4 {
-  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-4.png");
-}
-
-#app-parallax-page .app-parallax-layer-5 {
-  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-5.png");
-}
-
-#app-parallax-page .app-parallax-layer-6 {
-  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-6.png");
-}
-
-#app-parallax-page .app-parallax-layer-7 {
-  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-7.png");
-}
-
-#app-parallax-page .app-parallax-layer-8 {
-  background-image: url("../../../../../assets/images/parallax/overview/parallax-layer-8.png");
 }
 
 header .app-header-content {

@@ -10,7 +10,6 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineStyle": false,
           "styleext": "scss"
         }
       },
@@ -25,13 +24,13 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/images/"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/themes/main.theme.scss",
               "node_modules/materialize-css/sass/materialize.scss",
-              "node_modules/@mdi/font/scss/materialdesignicons.scss"
+              "node_modules/@mdi/font/scss/materialdesignicons.scss",
+              "src/themes/main.theme.scss",
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

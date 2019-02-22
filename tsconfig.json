@@ -2,6 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "src/",
+    "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "target": "es5",
     "module": "commonjs",
@@ -12,7 +13,6 @@
     "lib": [ "es2015", "dom" ],
     "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
-    "declaration": false,
     "removeComments": false,
     "typeRoots": [                        
       "node_modules/@types"
@@ -22,13 +22,13 @@
       "node"
     ],
     "paths": {            
-      "@app/*":     ["app/*"],
-      "@assets/*":  ["assets/*"],
-      "@core/*":    ["app/core/*"],
-      "@env/*":     ["environments/*"],
-      "@helpers/*": ["app/helpers/*"],
-      "@routes/*":  ["app/modules/*"],
-      "@shared/*":  ["app/shared/*"]
+      "@app/*":       ["app/*"],
+      "@assets/**":   ["assets/**"],
+      "@core/*":      ["app/core/*"],
+      "@env/*":       ["environments/*"],
+      "@helpers/*":   ["app/helpers/*"],
+      "@routes/*":    ["app/modules/*"],
+      "@shared/*":    ["app/shared/*"]
     }
   },
   "exclude": [

@@ -1,6 +1,6 @@
 <!-- Page Header -->
 <!-- TODO:: Generate component for header feature -->
-<header class="app-header-config">
+<header id="app-header" class="app-header-config">
   <div class="app-header-content">
     <!-- <h1 class="mat-display-1">{{ welcomeMsg | uppercase }}</h1> -->
     <h2 class="mat-headline">
@@ -13,20 +13,32 @@
 
   </div>
 
+  <!-- <div id="app-parallax-page">
+    <div class="layer layer-01" data-depth="1.00" data-type="parallax"></div>
+    <div class="layer layer-02" data-depth="0.80" data-type="parallax"></div>
+    <div class="layer layer-03" data-depth="0.70" data-type="parallax"></div>
+    <div class="layer layer-04" data-depth="0.60" data-type="parallax"></div>
+    <div class="layer layer-05" data-depth="0.40" data-type="parallax"></div>
+    <div class="layer layer-06" data-depth="0.30" data-type="parallax"></div>
+    <div class="layer layer-07" data-depth="0.20" data-type="parallax"></div>
+    <div class="layer layer-08" data-depth="0.10" data-type="parallax"></div>
+  </div> -->
+
   <div id="app-parallax-page">
-    <div class="app-parallax-layer-1" data-type="parallax"></div>
-    <div class="app-parallax-layer-2" data-type="parallax"></div>
-    <div class="app-parallax-layer-3" data-type="parallax"></div>
-    <div class="app-parallax-layer-4" data-type="parallax"></div>
-    <div class="app-parallax-layer-5" data-type="parallax"></div>
-    <div class="app-parallax-layer-6" data-type="parallax"></div>
-    <div class="app-parallax-layer-7" data-type="parallax"></div>
-    <div class="app-parallax-layer-8" data-type="parallax"></div>
+    <div class="layer" data-depth="1.00" data-type="parallax"
+          [style.background-image]="'url(\'' + imgPath + 'parallax-layer-6.png\')'"></div>
+    <div class="layer" data-depth="0.80" data-type="parallax" [style.background-image]="'url(\'' + imgPath + 'parallax-layer-6.png\')'"></div>
+    <div class="layer" data-depth="0.70" data-type="parallax" [style.background-image]="'url(\'' + imgPath + 'parallax-layer-6.png\')'"></div>
+    <div class="layer" data-depth="0.60" data-type="parallax" [style.background-image]="'url(\'' + imgPath + 'parallax-layer-6.png\')'"></div>
+    <div class="layer" data-depth="0.40" data-type="parallax" [style.background-image]="'url(\'' + imgPath + 'parallax-layer-6.png\')'"></div>
+    <div class="layer" data-depth="0.30" data-type="parallax" [style.background-image]="'url(\'' + imgPath + 'parallax-layer-6.png\')'"></div>
+    <div class="layer" data-depth="0.20" data-type="parallax" [style.background-image]="'url(\'' + imgPath + 'parallax-layer-6.png\')'"></div>
+    <div class="layer" data-depth="0.10" data-type="parallax" [style.background-image]="'url(\'' + imgPath + 'parallax-layer-6.png\')'"></div>
   </div>
   
 </header>
 
-<div class="container">
+<div id="app-container" class="container">
   
   <!-- Section One -->
   <section  class="app-section-config app-section-container app-section-one">

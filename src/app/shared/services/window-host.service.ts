@@ -1,3 +1,6 @@
+// TODO:: Determine if any code from this service can be `cherry-picked` or not
+// NOTE:: Otherwise, remove this file from project
+
 import { isPlatformBrowser } from '@angular/common';
 import { ClassProvider, FactoryProvider,
          Injectable, InjectionToken, PLATFORM_ID } from '@angular/core';
