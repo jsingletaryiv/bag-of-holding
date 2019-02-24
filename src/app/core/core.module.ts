@@ -22,7 +22,7 @@ import { NavbarComponent } from '@core/navbar/navbar.component';
     BrowserAnimationsModule,
     CommonModule,
     CoreRoutingModule,
-    SharedModule,
+    SharedModule
     // Scroll
   ],
   declarations: [
@@ -35,7 +35,7 @@ import { NavbarComponent } from '@core/navbar/navbar.component';
     BrowserAnimationsModule,
     CoreRoutingModule,
     SharedModule,
-    NavbarComponent,
+    NavbarComponent
     // Scroll
     // TrackScrollDirective
   ]

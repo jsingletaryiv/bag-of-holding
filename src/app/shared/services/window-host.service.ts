@@ -38,6 +38,7 @@ export function windowFactory(windowHostRef: WindowHostService, platformId: Obje
     return windowHostRef.nativeWindow;
   }
   return new Object();
+
 }
 
 // let windowFactory = (logger: Logger, userService: UserService) => {

@@ -1,15 +1,13 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "../out-tsc/app",
-    "lib": [ "es2018", "dom" ],
-    "module": "commonjs",
+    "outDir": "../dist/out-tsc/app",
+    "lib": [ "es2015", "es2017", "es2018", "es7", "dom" ],
     "types": [
-      "jasmine",
+      "node",
       "jquery",
-      "materialize-css",
-      "node"
+      "jasmine",
+      "materialize-css"
     ]
   },
   "exclude": [

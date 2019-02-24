@@ -77,12 +77,6 @@ export class WelcomePageComponent implements OnInit, OnDestroy, AfterViewInit {
       layer.setAttribute('style', '-o-transform: ' + translate3d + ';');
       layer.setAttribute('style', 'transform: ' + translate3d + ';');
 
-      // parallaxLayer.style['-webkit-transform'] = translate3d;
-      // parallaxLayer.style['-moz-transform'] = translate3d;
-      // parallaxLayer.style['-ms-transform'] = translate3d;
-      // parallaxLayer.style['-o-transform'] = translate3d;
-      // parallaxLayer.style.transform = translate3d;
-
       console.log('Parallax Layer : ', layers);
 
     });

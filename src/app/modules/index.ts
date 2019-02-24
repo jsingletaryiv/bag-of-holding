@@ -1,3 +1,4 @@
+// TODO: Consider changing the 'module' directory name to something more related.
 // About
 export * from '@app/modules/about/about.module';
 export * from '@app/modules/about/pages/about/about-page.component';

@@ -4,8 +4,8 @@
   "newProjectRoot": "projects",
   "projects": {
     "bag-of-holding": {
-      "root": "",
-      "sourceRoot": "src/",
+      "root": ".",
+      "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -133,7 +133,7 @@
       }
     },
     "landing-page-app": {
-      "root": "projects/landing-page-app/",
+      "root": ".",
       "sourceRoot": "projects/landing-page-app/src",
       "projectType": "application",
       "prefix": "app",
