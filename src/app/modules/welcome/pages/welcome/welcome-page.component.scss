@@ -2,12 +2,17 @@
 // Parallax
 /* TODO:: Generate dedicated component for header feature...
 Move all markup and styles needed for Parallax */
+
+// Variables
+$app-assets-repo: '../../../../../assets';
+$app-images-path: '#{$app-assets-repo}/images' !default;
+
 body {
-    height: 100%;
+    // height: 100%;
     margin: 0;
     padding: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
     // perspective: 10rem;
     // transform-style: preserve-3d;
 }
@@ -21,59 +26,79 @@ body {
 // }
 
 // Full Landing-Page
-// header {
-//     height: 100vh;
-//     // overflow-y: scroll;
-//     // overflow-x: hidden;
-//     // background-image: url('../../../../../assets/images/welcome-header.jpg');
-//     // background-size: cover;
-//     // background-position: center;
+// TODO:: Move all `header` styles to dedicated file //
+header {
+    height: 100vh;
+    // width: 100%;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+    // background-image: url('./assets/images/welcome-header.jpg');
+    // background-size: 100vh;
+    // z-index: 0;
+    // background-position: center;
 
-//     div#app-parallax-page {
-//         height: 100vh;
-//         overflow: hidden;
-//         position: relative;
+    div#app-header-parallax {
+        height: 100vh;
+        // overflow-x: hidden;
+        overflow: hidden;
+        position: relative;
+        // z-index: -1;
     
-//         div.layer {
-//             background-position: center;
-//             // background-size: auto;
-//             background-size: cover;
-//             background-repeat: no-repeat;
-//             height: 100vh;
-//             width: auto;
-//             position: fixed;
-//             content: "";
-//             display: block;
-//             z-index: -1;
+        .layer {
+            position: absolute;
+            background-size: 100vh;
+            background-position: bottom center;
+            // background-size: auto;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            // transform-origin:  bottom center 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        // Assets
+        .layer-1 { 
+            background-image: url('~/assets/images/parallax/overview/parallax-layer-1.png');
+        }
+        .layer-2 { 
+            background-image: url('~/assets/images/parallax/overview/parallax-layer-2.png');
+        }
+        .layer-3 { 
+            background-image: url('~/assets/images/parallax/overview/parallax-layer-3.png');
+        }
+        .layer-4 { 
+            background-image: url('~/assets/images/parallax/overview/parallax-layer-4.png');
+        }
+        .layer-5 { 
+            background-image: url('~/assets/images/parallax/overview/parallax-layer-5.png');
+        }
+        .layer-6 { 
+            background-image: url('~/assets/images/parallax/overview/parallax-layer-6.png');
+        }
+        .layer-7 { 
+            background-image: url('~/assets/images/parallax/overview/parallax-layer-7.png');
+        }
+        .layer-8 { 
+            background-image: url('~/assets/images/parallax/overview/parallax-layer-8.png');
+        }
     
-//             // &.layer-01 { 
-//             //     background-image: url('../../../../../assets/images/parallax/overview/parallax-layer-6.png');
-//             // }
-//             // &.layer-02 { background-image: url('../../../../../assets/images/parallax/overview/parallax-layer-6.png') }
-//             // &.layer-03 { background-image: url('../../../../../assets/images/parallax/overview/parallax-layer-6.png') }
-//             // &.layer-04 { background-image: url('../../../../../assets/images/parallax/overview/parallax-layer-6.png') }
-//             // &.layer-05 { background-image: url('../../../../../assets/images/parallax/overview/parallax-layer-6.png') }
-//             // &.layer-06 { background-image: url('../../../../../assets/images/parallax/overview/parallax-layer-6.png') }
-//             // &.layer-07 { background-image: url('../../../../../assets/images/parallax/overview/parallax-layer-6.png') }
-//             // &.layer-08 { background-image: url('../../../../../assets/images/parallax/overview/parallax-layer-6.png') }
-//         }
-    
-//         // Parallax layers
-//         // $parallax-layer-path: '../../../../../assets/images/parallax/overview';
-//         // @for $i from 1 through 8 {
-//         //     .app-parallax-layer-#{$i} { 
-//         //         background-image: url('#{$parallax-layer-path}/parallax-layer-#{$i}.png'); 
-//         //     }
-//         // }
-//     }
-// }
+        // Parallax layers
+        // $parallax-layer-path: '';
+        // @for $i from 1 through 8 {
+        //     .app-parallax-layer-#{$i} { 
+        //         background-image: url('~/assets/images/parallax/overview/parallax-layer-#{$i}.png'); 
+        //     }
+        // }
+    }
+}
 
 header .app-header-content {
-    // width: 100%;
+    width: 100%;
     // top: 50%;
-    position: relative;
-    padding: 34vh 5vw 0 5vw;
-    z-index: 1;
+    // position: relative;
+    // padding: 34vh 5vw 0 5vw;
+    // z-index: 1;
 
     h1, h2, h3, h4 {
         font-family: 'Comfortaa', normal;

@@ -10,6 +10,7 @@ import { WelcomePageComponent } from '@routes/welcome/pages/welcome/welcome-page
   imports: [
     CommonModule,
     SharedModule,
+    // TrackScrollDirective​​,
     WelcomeRoutingModule
   ],
   declarations: [

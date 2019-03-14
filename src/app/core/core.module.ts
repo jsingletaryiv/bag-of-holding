@@ -34,8 +34,8 @@ import { NavbarComponent } from '@core/navbar/navbar.component';
   exports: [
     BrowserAnimationsModule,
     CoreRoutingModule,
-    SharedModule,
-    NavbarComponent
+    NavbarComponent,
+    SharedModule
     // Scroll
     // TrackScrollDirective
   ]
