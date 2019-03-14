@@ -7,7 +7,7 @@ import { MaterializeModule } from '@shared/materialize/materialize.module';
 import { HeaderComponent } from '@shared/header/header.component';
 import { FooterComponent } from '@shared/footer/footer.component';
 
-// import { TrackScrollDirective } from '@shared/directives/track-scroll.directive';
+import { TrackScrollDirective } from '@shared/directives/track-scroll.directive';
 
 @NgModule({
   imports: [
@@ -18,14 +18,14 @@ import { FooterComponent } from '@shared/footer/footer.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    // TrackScrollDirective
+    TrackScrollDirective
   ],
   exports: [
     IconsModule,
     MaterializeModule,
     HeaderComponent,
     FooterComponent,
-    // TrackScrollDirective
+    TrackScrollDirective
   ]
 })
 export class SharedModule { }
