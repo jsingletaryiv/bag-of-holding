@@ -4,6 +4,17 @@
 
 export const environment = {
   production: false,
+  app: {
+    name: require('../../package.json').name,
+    version: require('../../package.json').version
+  },
+  serverUrl: 'http://localhost:4200',
+  assets: {
+    images: '/assets/images',
+    parallax: '/assets/images/parallax',
+    themes: ''
+  }
+
 };
 
 /*
