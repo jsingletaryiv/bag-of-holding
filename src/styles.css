@@ -11,7 +11,6 @@
 
 html {
   height: 100%;
-  overflow: hidden;
 }
 
 html body {
@@ -54,15 +53,6 @@ app-root app-navbar {
   z-index: 3;
 }
 
-app-root > app-about,
-app-root > app-contact,
-app-root > app-projects,
-app-root > app-sandbox,
-app-root > app-welcome {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 app-root > app-about h1, app-root > app-about h2, app-root > app-about h3, app-root > app-about h4,
 app-root > app-contact h1,
 app-root > app-contact h2,
@@ -84,54 +74,6 @@ app-root > app-welcome h4 {
   margin: 0;
 }
 
-app-root > app-about header,
-app-root > app-contact header,
-app-root > app-projects header,
-app-root > app-sandbox header,
-app-root > app-welcome header {
-  height: 100vh;
-  background-position: top center;
-  background-size: 100vw 100vh;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  -webkit-transform-origin: center center 0;
-          transform-origin: center center 0;
-}
-
-app-root > app-about header div#app-parallax-page,
-app-root > app-contact header div#app-parallax-page,
-app-root > app-projects header div#app-parallax-page,
-app-root > app-sandbox header div#app-parallax-page,
-app-root > app-welcome header div#app-parallax-page {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
-
-app-root > app-about header div#app-parallax-page .layer,
-app-root > app-contact header div#app-parallax-page .layer,
-app-root > app-projects header div#app-parallax-page .layer,
-app-root > app-sandbox header div#app-parallax-page .layer,
-app-root > app-welcome header div#app-parallax-page .layer {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: auto;
-  position: fixed;
-  content: "";
-  display: block;
-  z-index: -1;
-}
-
-app-root > app-about header div#app-parallax-page .layer.layer-01,
-app-root > app-contact header div#app-parallax-page .layer.layer-01,
-app-root > app-projects header div#app-parallax-page .layer.layer-01,
-app-root > app-sandbox header div#app-parallax-page .layer.layer-01,
-app-root > app-welcome header div#app-parallax-page .layer.layer-01 {
-  background-image: url("./assets/images/parallax/overview/parallax-layer-6.png");
-}
-
 app-root > app-about div > section.app-section-container,
 app-root > app-contact div > section.app-section-container,
 app-root > app-projects div > section.app-section-container,
@@ -140,7 +82,6 @@ app-root > app-welcome div > section.app-section-container {
   margin-top: 2vh;
   list-style: none;
   width: 100%;
-  z-index: 2;
 }
 
 app-root > app-about div > section.app-section-container p,
