@@ -10,7 +10,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
 
-**NOTE:** Initial thoughts are to leverage `ngx-materialize` for it's robust components. Also to help maintain the Material Design standards.
+Intergrated `ngx-materialize` node package for it's robust components. Also to help maintain the Material Design standards.
 
 ## Development server
 
